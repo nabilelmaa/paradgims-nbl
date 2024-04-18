@@ -1,0 +1,68 @@
+1. What are some characteristics of synchronous/blocking code execution?
+
+2. How does JavaScript handle concurrency through threads?
+
+4. Explain the concept of callback hell and why it is considered a problem in asynchronous programming.
+
+5. What is a Promise in JavaScript?
+``
+6. How can you handle errors in a Promise-based asynchronous function?
+
+7. What is Promise chaining and how does it work?
+
+8. Explain what happens when a .then() call returns a value.
+
+8. Explain the concept of async/await syntax in JavaScript. How does it differ from Promise-based asynchronous programming? The benefits of using async/await syntax?
+
+9. Describe the purpose and usage of `Promise.all` and `Promise.race` methods.
+
+10. Explain the code showing how fetch() await work.
+
+let response = await fetch('http://www.example.org/example.txt')
+let text = await response.text()
+console.log(text)
+
+11. Write a JavaScript function `fetchData` that simulates fetching data from an API.
+    The function should return a promise that resolves after 2 seconds.
+
+12. We would like to download a shunk file(just a part of the file) specifying the start offset and the end offset using aync/await.
+
+14. Write a JavaScript function `fetchMultipleData` that fetches data from multiple APIs simultaneously using `Promise.all`.
+    The function should fetch data from three different APIs and log the results to the console when all requests are complete.
+
+
+=> Problems:
+1.
+Write a function fetchUserData that simulates fetching user data from an API. 
+The function should return a Promise that resolves with the user data after 2 seconds. 
+Chain another Promise that processes the user data (e.g., filters out sensitive information) and 
+returns the processed data.
+
+2. Async/Await Syntax:
+Refactor the fetchUserData function from the previous exercise to use async/await syntax.
+
+3. 
+Error Handling:
+
+Write a function divideNumbers that takes two numbers as input and returns a Promise that resolves with 
+the result of dividing the first number by the second number. Handle the scenario where the second 
+number is zero by rejecting the Promise with an error message "Division by zero is not allowed".
+
+4. 
+Promise.all():
+
+Write a function fetchDataFromMultipleEndpoints that takes an array of endpoint URLs as input and returns a Promise 
+that resolves with an array of data fetched from all the endpoints.
+
+5.
+Promise.race():
+
+Write a function fetchDataWithTimeout that takes a URL and a timeout value (in milliseconds) as input. 
+The function should return a Promise that resolves with the fetched data if it's received within the specified 
+timeout period, otherwise rejects with a timeout error message.
+
+6. Advanced Error Handling:
+
+Write a function fetchDataWithErrorHandling that simulates fetching data from an API. 
+Sometimes the API returns an error response instead of the expected data. 
+Implement error handling using try/catch blocks and Promise rejection to handle both successful and error responses from the API.
