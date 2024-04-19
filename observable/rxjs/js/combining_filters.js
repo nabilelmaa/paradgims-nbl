@@ -16,7 +16,7 @@ const isPrime = (num) => {
 }
 
 const observable$ = interval(500).pipe(
-    filter((x) => !isPrime(x)), // Filter prime numbers
+    filter((x) => !isPrime(x)), // Filter not prime numbers
     filter((x) => x % 2 !== 0), // Filter odd numbers
     filter((x) => x <= 50) // Filter numbers less than or equal to 50
 );
