@@ -118,15 +118,17 @@ Generate an observable that emits numbers from 1 to 10 using interval(500). Use 
 
 ### 7. Compare promises and Rx observables.
 
-- **Execution Model**:
-  - **Promises**: Promises execute immediately upon creation and resolve to a single value or error. They represent the result of a one-time asynchronous operation.
-  - **Rx Observables**: Are lazy and only start producing values when subscribed to. They allow for planning and composing operations before execution, making them suitable for continuous data streams.
-- **Flexibility and Planning**:
-  - **Promises**: Lack of the ability to plan or compose operations before execution. Planning what we want to do while executing asynchronous operations; mixing planning and execution.
-  - **Rx Observables**: Provide powerful composition capabilities with operators like `map`, `filter`, and `mergeMap`, enabling transformation and manipulation of asynchronous data streams before subscription.
-- **Usage in I/O Libraries**:
-  - **Promises**: Traditionally used for handling one-time asynchronous tasks.
-  - **Rx Observables**: Increasingly adopted in modern I/O libraries (e.g., Angular's HttpClient) due to their composability and flexibility in managing continuous streams of asynchronous data.
+- **Execution Model:**
+   - Promises execute immediately upon creation while observables require a subscription for execution because they are lazy(cold), hence they allow for planning and composing operations before execution, making them suitable for continuous data streams.
+   - Rx observables can emit multiple values over time, unlike promises which resolve to a single value or error.
+
+- **Flexibility and Planning:**
+   - Promises: Lack of the ability to plan or compose operations before execution. Planning what we want to do while executing asynchronous operations; mixing planning and execution.
+   - Rx Observables: Provide powerful composition capabilities with operators(map, filter...) to separate planning from execution.
+
+- **Usage in I/O Libraries:**
+   - Promises: Traditionally used for handling one-time asynchronous tasks.
+   - Rx Observables: Increasingly adopted in modern I/O libraries (e.g., Angular's HttpClient) due to their composability and flexibility in managing continuous streams of asynchronous data.
 
 ### 8. Compare and contrast the Observer design pattern with the approach taken by RxJS.
 
