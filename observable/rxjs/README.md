@@ -224,7 +224,7 @@ protected final void notify(T notification) {
 
 ### 21. Rx Observable is described metaphorically as a recipe, what does recipe refer to in this context?
 
-- A Function is just a recipe. When subscribing to the observer, then the function will start executing; since Observables are cold, you need a subscriber to use that recipe; it can't do anything by itself.
+- A Function is just a recipe. When subscribing to the observable, then the function will start executing; since Observables are cold, you need a subscriber to use that recipe; it can't do anything by itself.
 ### 22. In the Windows case study, what is the observer, and why is it said to be active?
 - The file system is the truth holder(source of data), it's the acting entity because the window doesn't actively observe, it just subscribes and asks back for data.
   - Or
