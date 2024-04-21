@@ -221,6 +221,27 @@ protected final void notify(T notification) {
 
 - Observables can be asynchronous or synchronous, emitting values over time without blocking the main thread.
 
-### 21. An RxObservable is described metaphorically as a recipe, what does recipe refer to in this context?
+### 21. Rx Observable is described metaphorically as a recipe, what does recipe refer to in this context?
 
 - A Function is just a recipe. When subscribing to the observer, then the function will start executing; since Observables are cold, you need a subscriber to use that recipe; it can't do anything by itself.
+### 22. In the Windows case study, what is the observer, and why is it said to be active?
+- The file system is the truth holder(source of data), it's the acting entity because the window doesn't actively observe, it just subscribes and asks back for data.
+- # Or
+- The file system is the active entity or "truth holder" in this case. The window, acting as the observer, subscribes to the file system to receive updates or data when needed, rather than actively monitoring it continuously.
+
+### 23. Do all concrete observers implement the update method from the observer interface in the same way?
+- No, the interface just acts as a contract between the observer and the observable. Hence, the update method can be implemented differently based on specific functionality and requirements within the application; concrete observers don't care about the method but about their specific logic.
+
+### 24. Can we consider the update method as a callback function?
+- Yes, the update method can be considered a callback function. This method is invoked by the observable to notify observers of changes or events. It's passed as an argument.
+
+### 25. What do we mean by observer artifacts?
+- Observer artifacts are interfaces defining how observers react to events emitted by observables, including methods like next(), error(), and complete().
+
+### 26. Compare functions and observables.
+- Both of them are cold.
+- A function produces data when it executes
+- A function can produce only one data
+- Observables can produce a stream of events
+- Observables push events whenever they want to.
+- Observable sub-observers, it’s hot, and all the obeservers in the list, share the same context(one execution context).
