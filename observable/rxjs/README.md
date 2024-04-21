@@ -245,3 +245,7 @@ protected final void notify(T notification) {
 - Observables can produce a stream of events
 - Observables push events whenever they want to.
 - Observable sub-observers, it’s hot, and all the obeservers in the list, share the same context(one execution context).
+### 27. Explain how `pipe()` works.
+- Returns another observable (nothing happens); just encapsulates a new plan, data hasn’t been produced yet. Customizing the plan with pipe, and the result is the new plan(a new observable), hence, it will produce exactly what we want. The advantage of pipelining is separating planning from execution.
+### 28. What is the advantage of pipelining?
+- Separating planning from execution.
