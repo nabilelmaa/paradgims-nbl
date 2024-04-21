@@ -120,7 +120,7 @@ Generate an observable that emits numbers from 1 to 10 using interval(500). Use 
 
 - **Execution Model:**
    - Promises execute immediately upon creation while observables require a subscription for execution because they are lazy(cold), hence they allow for planning and composing operations before execution, making them suitable for continuous data streams.
-   - Rx observables can emit multiple values over time, unlike promises which resolve to a single value or error.
+   - Rx observables can emit a single or multiple values over time, unlike promises which resolve to a single value or error.
 
 - **Flexibility and Planning:**
    - Promises: Lack of the ability to plan or compose operations before execution. Planning what we want to do while executing asynchronous operations; mixing planning and execution.
