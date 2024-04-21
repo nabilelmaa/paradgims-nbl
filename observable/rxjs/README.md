@@ -217,7 +217,7 @@ protected final void notify(T notification) {
 
 ### 20. Are observables async or sync?
 
-- Observables are asynchronous, emitting values over time without blocking the main thread.
+- Observables can be asynchronous or synchronous, emitting values over time without blocking the main thread.
 
 ### 21. An RxObservable is described metaphorically as a recipe, what does recipe refer to in this context?
 
