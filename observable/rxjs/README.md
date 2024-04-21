@@ -226,7 +226,7 @@ protected final void notify(T notification) {
 - A Function is just a recipe. When subscribing to the observer, then the function will start executing; since Observables are cold, you need a subscriber to use that recipe; it can't do anything by itself.
 ### 22. In the Windows case study, what is the observer, and why is it said to be active?
 - The file system is the truth holder(source of data), it's the acting entity because the window doesn't actively observe, it just subscribes and asks back for data.
-- # Or
+  - Or
 - The file system is the active entity or "truth holder" in this case. The window, acting as the observer, subscribes to the file system to receive updates or data when needed, rather than actively monitoring it continuously.
 
 ### 23. Do all concrete observers implement the update method from the observer interface in the same way?
