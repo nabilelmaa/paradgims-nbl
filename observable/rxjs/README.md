@@ -114,7 +114,7 @@ Generate an observable that emits numbers from 1 to 10 using interval(500). Use 
 
 ### 6. What is an Observable in the context of Reactive Extensions (Rx)?
 
-- In Rx, an Observable represents a sequence of data or events over time that can be observed. It can asynchronously emit multiple values.
+- In Rx, an Observable represents a sequence of data or events over time that can be observed. It can asynchronously or synchronously emit multiple values or a single value, lazily (cold) or eagerly (hot), unicast to a single consumer (cold), or multicast to multiple consumers (hot).
 
 ### 7. Compare promises and Rx observables.
 
