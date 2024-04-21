@@ -146,7 +146,8 @@ Generate an observable that emits numbers from 1 to 10 using interval(500). Use 
 
 - Reactive programming provides tools to manipulate and react to asynchronous data streams declaratively, avoiding callback complexity.
 
-### 12. Describe the role of operators in RxJS and why they are powerful.
+### 12. Describe the role of operators in RxJS. Do they change the actual observable?
+In simple words, we can say that operators are simply methods that can be used with Observables or Subjects of RxJS. RxJS operators facilitate us to change the original observable in some manner and return a new observable. The operators do not change the existing observable. They simply modify it and return a new one.
 
 - Operators in RxJS transform, filter, combine, or create new observables, providing powerful tools for stream manipulation.
 
