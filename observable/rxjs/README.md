@@ -13,7 +13,7 @@
    npm install rxjs
    ```
 
-3. **List of Exercises**
+# List of Exercises
 
 ### Exercise 1: Filter Odd Numbers
 
