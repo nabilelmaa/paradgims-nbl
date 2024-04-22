@@ -110,7 +110,7 @@ Generate an observable that emits numbers from 1 to 10 using an interval(500). U
 
 ### 5. What are observers?
 
-- These are objects that are interested in receiving updates or notifications from a subject (or observable) when its state changes. Observers are registered with the observable and are notified when the observable's state changes.
+- These are objects that are interested in receiving updates or notifications from a subject observable when its state changes. Observers are registered with the subject and are notified when the observable's state changes.
 
 ### 6. What is an Observable in the context of Reactive Extensions (Rx)?
 
