@@ -86,17 +86,17 @@ Use pipe with the appropriate operators to concatenate both observables such tha
 
 ### Exercise 17: Chaining Multiple Operators
 
-Generate an observable that emits numbers from 1 to 10 using interval(500). Use pipe with multiple operators (filter, map, etc.) to transform the emitted values based on certain conditions (e.g., filter even numbers, square odd numbers), and then subscribe to print the transformed values.
+Generate an observable that emits numbers from 1 to 10 using an interval(500). Use pipe with multiple operators (filter, map, etc.) to transform the emitted values based on certain conditions (e.g., filter even numbers, square odd numbers), and then subscribe to print the transformed values.
 
 # Quiz
 
 ### 1. Explain the Observer design pattern.
 
-- The Observer design pattern establishes a one-to-many relationship where a subject (observable) maintains a list of observers. Observers can dynamically register(e.g. subscribe in the RxJs library) or unregister(unsubscribe) with the observable. When the state of the observable changes, it iterates through its list of observers and notifies them using specific methods like update() or next(). This notification mechanism allows the observable to push data or state changes to observers without being tightly coupled.
+- The Observer design pattern establishes a one-to-many relationship where a subject maintains a list of observers. Observers can dynamically register(e.g. subscribe in the RxJs library) or unregister(unsubscribe) with the observable. When the state of the subject changes, it iterates through its list of observers and notifies them using specific methods like update() or next(). This notification mechanism allows the subject to push data or state changes to observers without being tightly coupled.
 
 ### 2. Explain the advantages of the Observer design pattern.
 
-- Advantages include decoupling between subjects and observers and flexibility in adding/removing observers.Observers are notified automatically of state changes, eliminating the need for continuous polling/checking.
+- Advantages include decoupling between subjects and observers and flexibility in adding/removing observers. Observers are notified automatically of state changes, eliminating the need for continuous polling/checking.
 
 ### 3. Explain what we mean by saying that Rx observables are cold.
 
