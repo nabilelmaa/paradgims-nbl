@@ -15,7 +15,7 @@ public class Server {
                 System.out.println(
                         "Server got a connection from a client who's port is" + connectionFromClient.getPort());
                 try {
-                    String errorMesssage = "NOT FOUND!";
+
                     InputStream in = connectionFromClient.getInputStream();
                     OutputStream out = connectionFromClient.getOutputStream();
 
@@ -37,6 +37,10 @@ public class Server {
                     int startByte = Integer.parseInt(startOffset);
                     int endByte = Integer.parseInt(endOffset);
 
+                    String errorMesssage = "NOT FOUND";
+                    String invalidMesssage = "INVALID REQUEST";
+                    String successMesssage = "OK";
+
                     if (command.equals("download_chunk")) {
                         try {
                             FileInputStream fileIn = new FileInputStream("ServerShare/" + fileName);
@@ -45,7 +49,7 @@ public class Server {
 
                             if (startByte >= 0 && endByte < fileSize && startByte <= endByte) {
 
-                                header = "OK" + " " + fileSize;
+                                header = successMesssage + " " + fileSize;
                                 headerWriter.write(header, 0, header.length());
                                 headerWriter.flush();
 
@@ -57,15 +61,11 @@ public class Server {
                                 dataOut.write(bytes, 0, chunkSize);
 
                             } else {
-                                header = "INVALID REQUEST!" + " " + "\n";
+                                header = invalidMesssage + " " + "\n";
                                 headerWriter.write(header, 0, header.length());
                                 headerWriter.flush();
                             }
                             fileIn.close();
-
-                            byte[] bytes = new byte[fileSize];
-                            fileIn.read(bytes);
-
                         } catch (Exception ex) {
                             headerWriter.write(errorMesssage, 0, errorMesssage.length());
                         }
