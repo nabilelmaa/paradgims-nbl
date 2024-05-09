@@ -13,7 +13,7 @@ public class Server {
                 Socket connectionFromClient = ss.accept();
 
                 System.out.println(
-                        "Server got a connection from a client who's port is" + connectionFromClient.getPort());
+                        "Server got a connection from a client whose port is" + connectionFromClient.getPort());
                 try {
                     String errorMesssage = "NOT FOUND!";
                     InputStream in = connectionFromClient.getInputStream();
