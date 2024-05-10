@@ -2,23 +2,18 @@ package clientServer.fxscanner;
 
 import java.io.*;
 import java.net.InetSocketAddress;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.StringTokenizer;
 
 public class FxScanner {
-    
-    public static boolean isFxServer(int port) throws Exception {
-        try(ServerSocket ss = new ServerSocket(port)) {
-            Socket connectionFromClient = ss.accept();
-            InputStream in = connectionFromClient.getInputStream();
-            OutputStream out = connectionFromClient.getOutputStream();
+
+    public static boolean isFxServer(Socket socket) throws Exception {
+        try(socket) {
+            InputStream in = socket.getInputStream();
+            OutputStream out = socket.getOutputStream();
 
             BufferedReader headerReader = new BufferedReader(new InputStreamReader(in));
             BufferedWriter headerWriter = new BufferedWriter(new OutputStreamWriter(out));
-
-            DataInputStream dataIn = new DataInputStream(in);
-
             String fileName = "file.txt";
             String header = "download_chunk" + " " + fileName + " " + 1 + " " + -2;
             headerWriter.write(header, 0, header.length());
@@ -48,7 +43,7 @@ public class FxScanner {
             for (int port = startPort; port < endPort; ++port) {
                 try (Socket socket = new Socket()) {
                     socket.connect(new InetSocketAddress(host, port), 1000);
-                    if (isFxServer(port)) {
+                    if (isFxServer(socket)) {
                         System.out.println("Fx Server running at " + host + ":" + port);
                     }
                 } catch (Exception e) {
